@@ -1,0 +1,8 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.5">
+    <path d="M96 95H4V96H96V95Z" fill="currentColor"/>
+    <path d="M96 47H4V48H96V47Z" fill="currentColor"/>
+    <path d="M95 96V4H96V96H95Z" fill="currentColor"/>
+    <path d="M47 96V4H48V96H47Z" fill="currentColor"/>
+  </g>
+</svg>
