@@ -103,24 +103,28 @@ function RenovationOptions() {
       duration: "4 WEEKS TO BUILD",
       description: "Build your dream bathroom with premium fixtures and finishes.",
       image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=2940&auto=format&fit=crop",
+      href: "/services/bathroom-remodeling"
     },
     {
       title: "Kitchen",
       duration: "6 WEEKS TO BUILD",
       description: "Create your ideal kitchen with quality, lasting materials.",
       image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop",
+      href: "/services/kitchen-renovation"
     },
     {
       title: "Backyard",
       duration: "9 WEEKS TO BUILD",
       description: "Create your backyard getaway with durable materials and beautiful finishes.",
       image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2940&auto=format&fit=crop",
+      href: "/services/outdoor-living"
     },
     {
       title: "Basement",
       duration: "7 WEEKS TO BUILD",
       description: "Transform your basement into a functional and beautiful space.",
       image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2940&auto=format&fit=crop",
+      href: "/services"
     },
   ]
 
@@ -144,8 +148,10 @@ function RenovationOptions() {
                 <p className="text-muted-foreground">{option.description}</p>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">
-                  Learn more
+                <Button asChild variant="outline" className="w-full">
+                  <Link href={option.href}>
+                    Learn more
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
