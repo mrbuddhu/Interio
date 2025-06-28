@@ -5,27 +5,17 @@ import { Star, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { contactInfo } from "@/lib/contact-info"
-import { motion } from "framer-motion"
 
 // Site Header Component
 function SiteHeader() {
   return (
-    <motion.header 
-      className="sticky top-0 z-50 w-full border-b bg-background"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <header className="sticky top-0 z-50 w-full border-b bg-background animate-slide-down">
       <div className="container flex h-16 items-center justify-between">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        <div className="animate-fade-in-scale">
           <Link href="/" className="text-xl font-semibold">
             Interio
           </Link>
-        </motion.div>
+        </div>
         <nav className="hidden md:flex items-center gap-6">
           {[
             { href: "/about", label: "How it works" },
@@ -33,31 +23,25 @@ function SiteHeader() {
             { href: "/services", label: "Contractors" },
             { href: "/portfolio", label: "Gallery" }
           ].map((item, index) => (
-            <motion.div
+            <div
               key={item.href}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               <Link href={item.href} className="text-sm hover:text-emerald-600 transition-colors">
                 {item.label}
               </Link>
-            </motion.div>
+            </div>
           ))}
         </nav>
-        <motion.div 
-          className="flex items-center gap-4"
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
+        <div className="flex items-center gap-4 animate-slide-in-right">
           <Button variant="ghost">Log in</Button>
           <Button className="bg-emerald-600 hover:bg-emerald-700">
             Get your estimate
           </Button>
-        </motion.div>
+        </div>
       </div>
-    </motion.header>
+    </header>
   )
 }
 
@@ -66,34 +50,14 @@ function HeroSection() {
   return (
     <section className="relative bg-primary pt-20">
       <div className="container relative z-10 grid gap-8 pb-16 pt-12 md:grid-cols-2 md:gap-12 md:pb-24 md:pt-16">
-        <motion.div 
-          className="flex flex-col justify-center"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <motion.h1 
-            className="text-display-md font-serif text-white md:text-display-xl"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+        <div className="flex flex-col justify-center animate-slide-in-left">
+          <h1 className="text-display-md font-serif text-white md:text-display-xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Transform Your Living Space Into a Dream Home
-          </motion.h1>
-          <motion.p 
-            className="mt-6 text-lg/relaxed text-neutral-200"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          </h1>
+          <p className="mt-6 text-lg/relaxed text-neutral-200 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Experience exceptional home renovation services tailored to your style and budget. Get started with a free estimate today.
-          </motion.p>
-          <motion.div 
-            className="mt-8 flex flex-col gap-4 sm:flex-row"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <Button asChild>
               <Link href="/estimate" className="bg-white text-primary hover:bg-white/90">
                 Get Free Estimate
@@ -104,38 +68,25 @@ function HeroSection() {
                 View Our Projects
               </Link>
             </Button>
-          </motion.div>
-          <motion.div 
-            className="mt-12 flex items-center gap-8"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
+          </div>
+          <div className="mt-12 flex items-center gap-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             {[
               { number: "500+", label: "Projects Completed" },
               { number: "98%", label: "Client Satisfaction" },
               { number: "15+", label: "Years Experience" }
             ].map((stat, index) => (
-              <motion.div
+              <div
                 key={stat.label}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 1 + index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
+                className="animate-scale-in hover:scale-105 transition-transform duration-300"
+                style={{ animationDelay: `${1 + index * 0.2}s` }}
               >
                 <div className="text-3xl font-semibold text-white">{stat.number}</div>
                 <div className="mt-1 text-sm text-neutral-300">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
-        <motion.div 
-          className="relative aspect-[4/3] overflow-hidden rounded-lg md:aspect-auto"
-          initial={{ x: 100, opacity: 0, scale: 0.8 }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          whileHover={{ scale: 1.02 }}
-        >
+          </div>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg md:aspect-auto animate-slide-in-right hover:scale-105 transition-transform duration-500">
           <Image
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop"
             alt="Modern luxury living room with large windows and elegant furniture"
@@ -143,7 +94,7 @@ function HeroSection() {
             className="object-cover"
             priority
           />
-        </motion.div>
+        </div>
       </div>
       <div className="absolute inset-0 bg-[url(/pattern.svg)] opacity-50" />
     </section>
@@ -183,61 +134,25 @@ function RenovationOptions() {
     },
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  } as const
-
   return (
     <section className="py-16 bg-gray-50">
       <div className="container">
-        <motion.h2 
-          className="text-3xl font-bold text-center mb-12"
-          initial={{ y: -30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <h2 className="text-3xl font-bold text-center mb-12 animate-fade-in-up">
           Our Options
-        </motion.h2>
-        <motion.div 
-          className="grid md:grid-cols-2 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
           {options.map((option, index) => (
-            <motion.div
+            <div
               key={option.title}
-              variants={itemVariants}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="animate-fade-in-up hover:-translate-y-2 transition-transform duration-300"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <Card className="overflow-hidden h-full">
                 <CardHeader className="p-0">
-                  <motion.img
+                  <img
                     src={option.image}
                     alt={option.title}
-                    className="w-full h-48 object-cover"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </CardHeader>
                 <CardContent className="p-6">
@@ -253,9 +168,9 @@ function RenovationOptions() {
                   </Button>
                 </CardFooter>
               </Card>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
@@ -287,63 +202,39 @@ function ProcessSection() {
   return (
     <section className="section bg-neutral-50">
       <div className="container">
-        <motion.div 
-          className="mx-auto max-w-2xl text-center"
-          initial={{ y: -30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <div className="mx-auto max-w-2xl text-center animate-fade-in-up">
           <h2 className="text-display-sm font-serif text-neutral-900 md:text-display-md">
             Our Simple Process
           </h2>
           <p className="mt-4 text-lg text-neutral-600">
             We make home renovation easy with our streamlined approach
           </p>
-        </motion.div>
-        <motion.div 
-          className="mt-16 grid gap-8 md:grid-cols-3"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, staggerChildren: 0.2 }}
-          viewport={{ once: true }}
-        >
+        </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              className="group relative overflow-hidden rounded-lg bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="group relative overflow-hidden rounded-lg bg-white animate-fade-in-up hover:-translate-y-2 transition-transform duration-300"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <motion.div 
-                className="aspect-[4/3] relative"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
+              <div className="aspect-[4/3] relative hover:scale-105 transition-transform duration-300">
                 <Image
                   src={step.image}
                   alt={step.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-              </motion.div>
+              </div>
               <div className="p-6">
-                <motion.div 
-                  className="mb-4 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
-                >
+                <div className="mb-4 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary hover:scale-110 transition-transform duration-200">
                   Step {step.step}
-                </motion.div>
+                </div>
                 <h3 className="font-serif text-xl text-neutral-900">{step.title}</h3>
                 <p className="mt-2 text-neutral-600">{step.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
@@ -378,78 +269,50 @@ function Testimonials() {
   return (
     <section className="section bg-white">
       <div className="container">
-        <motion.div 
-          className="mx-auto max-w-2xl text-center"
-          initial={{ y: -30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <div className="mx-auto max-w-2xl text-center animate-fade-in-up">
           <h2 className="text-display-sm font-serif text-neutral-900 md:text-display-md">
             What Our Clients Say
           </h2>
           <p className="mt-4 text-lg text-neutral-600">
             Real stories from homeowners who transformed their spaces with us
           </p>
-        </motion.div>
-        <motion.div 
-          className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, staggerChildren: 0.2 }}
-          viewport={{ once: true }}
-        >
+        </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <motion.div
+            <div
               key={index}
-              className="rounded-lg bg-neutral-50 p-6"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              className="rounded-lg bg-neutral-50 p-6 animate-fade-in-up hover:-translate-y-1 transition-transform duration-300"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="flex items-center gap-4">
-                <motion.div 
-                  className="relative h-12 w-12 overflow-hidden rounded-full"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
-                >
+                <div className="relative h-12 w-12 overflow-hidden rounded-full hover:scale-110 transition-transform duration-200">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill
                     className="object-cover"
                   />
-                </motion.div>
+                </div>
                 <div>
                   <div className="font-medium text-neutral-900">{testimonial.name}</div>
                   <div className="text-sm text-neutral-500">{testimonial.location}</div>
                 </div>
               </div>
-              <motion.div 
-                className="mt-4 flex"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
-                viewport={{ once: true }}
-              >
+              <div className="mt-4 flex">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.3, delay: 0.6 + i * 0.1 }}
-                    viewport={{ once: true }}
+                    className="animate-star-pop"
+                    style={{ animationDelay: `${0.6 + i * 0.1}s` }}
                   >
                     <Star className="h-4 w-4 fill-secondary text-secondary" />
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
               <p className="mt-4 text-neutral-600">{testimonial.quote}</p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
@@ -458,21 +321,10 @@ function Testimonials() {
 // Footer Component
 function Footer() {
   return (
-    <motion.footer 
-      className="border-t bg-white"
-      initial={{ y: 50, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
+    <footer className="border-t bg-white animate-fade-in-up">
       <div className="container py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <motion.div
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <div className="animate-slide-in-left" style={{ animationDelay: '0.1s' }}>
             <h3 className="font-semibold mb-4 text-neutral-900">Rooms</h3>
             <ul className="space-y-2">
               <li><Link href="/services/bathroom-remodeling" className="text-neutral-600 hover:text-neutral-900 transition-colors">Bathrooms</Link></li>
@@ -480,13 +332,8 @@ function Footer() {
               <li><Link href="/services/outdoor-living" className="text-neutral-600 hover:text-neutral-900 transition-colors">Backyards</Link></li>
               <li><Link href="/services" className="text-neutral-600 hover:text-neutral-900 transition-colors">All Services</Link></li>
             </ul>
-          </motion.div>
-          <motion.div
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          </div>
+          <div className="animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
             <h3 className="font-semibold mb-4 text-neutral-900">Company</h3>
             <ul className="space-y-2">
               <li><Link href="/about" className="text-neutral-600 hover:text-neutral-900 transition-colors">About Us</Link></li>
@@ -494,13 +341,8 @@ function Footer() {
               <li><Link href="/services" className="text-neutral-600 hover:text-neutral-900 transition-colors">Services</Link></li>
               <li><Link href="/contact" className="text-neutral-600 hover:text-neutral-900 transition-colors">Contact</Link></li>
             </ul>
-          </motion.div>
-          <motion.div
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          </div>
+          <div className="animate-slide-in-left" style={{ animationDelay: '0.3s' }}>
             <h3 className="font-semibold mb-4 text-neutral-900">Contact</h3>
             <ul className="space-y-2">
               <li className="text-neutral-600">{contactInfo.phone}</li>
@@ -508,27 +350,16 @@ function Footer() {
               <li className="text-neutral-600">{contactInfo.address.street}</li>
               <li className="text-neutral-600">{contactInfo.address.city}</li>
             </ul>
-          </motion.div>
-          <motion.div
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          </div>
+          <div className="animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
             <h3 className="font-semibold mb-4 text-neutral-900">Legal</h3>
             <ul className="space-y-2">
               <li><Link href="/legal/terms" className="text-neutral-600 hover:text-neutral-900 transition-colors">Terms of Use</Link></li>
               <li><Link href="/legal/privacy" className="text-neutral-600 hover:text-neutral-900 transition-colors">Privacy Policy</Link></li>
             </ul>
-          </motion.div>
+          </div>
         </div>
-        <motion.div 
-          className="mt-12 pt-8 border-t"
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
+        <div className="mt-12 pt-8 border-t animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-neutral-600">&copy; {new Date().getFullYear()} Interio. All rights reserved.</p>
             <div className="flex items-center gap-2 text-neutral-600">
@@ -544,9 +375,9 @@ function Footer() {
               <span>- #1 Premium IT Boutique</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   )
 }
 
