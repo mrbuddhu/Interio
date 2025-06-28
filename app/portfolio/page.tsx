@@ -1,9 +1,13 @@
+"use client"
+
+import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 
 export default function PortfolioPage() {
   const categories = ["All", "Kitchen", "Bathroom", "Living Room", "Bedroom", "Office", "Outdoor"]
+  const [selected, setSelected] = useState("All")
 
   const projects = [
     {
@@ -56,6 +60,8 @@ export default function PortfolioPage() {
     }
   ]
 
+  const filtered = selected === "All" ? projects : projects.filter(p => p.category === selected)
+
   return (
     <>
       <Navigation />
@@ -87,6 +93,7 @@ export default function PortfolioPage() {
                       ? "bg-primary text-white"
                       : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
                   } ${index > 0 ? "ml-2" : ""}`}
+                  onClick={() => setSelected(category)}
                 >
                   {category}
                 </button>
@@ -99,7 +106,7 @@ export default function PortfolioPage() {
         <section className="section bg-white">
           <div className="container">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project, index) => (
+              {filtered.map((project, index) => (
                 <Link
                   key={index}
                   href={`/portfolio/${project.slug}`}
@@ -132,6 +139,9 @@ export default function PortfolioPage() {
                   </div>
                 </Link>
               ))}
+              {filtered.length === 0 && (
+                <div className="col-span-full text-center text-neutral-500 py-12">No projects found for this category.</div>
+              )}
             </div>
           </div>
         </section>

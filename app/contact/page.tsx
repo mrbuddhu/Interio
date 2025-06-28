@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
@@ -38,7 +39,7 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="mt-6 text-lg text-neutral-200">
-                Get in touch with our team to discuss your renovation project or schedule a consultation.
+                Ready to start your renovation project or have questions? Reach out to our team and we'll get back to you as soon as possible.
               </p>
             </div>
           </div>

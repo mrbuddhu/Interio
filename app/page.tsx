@@ -14,16 +14,16 @@ function SiteHeader() {
           Interio
         </Link>
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="#how-it-works" className="text-sm hover:text-emerald-600">
+          <Link href="/about" className="text-sm hover:text-emerald-600">
             How it works
           </Link>
-          <Link href="#services" className="text-sm hover:text-emerald-600">
+          <Link href="/services" className="text-sm hover:text-emerald-600">
             Services
           </Link>
-          <Link href="#contractors" className="text-sm hover:text-emerald-600">
+          <Link href="/services" className="text-sm hover:text-emerald-600">
             Contractors
           </Link>
-          <Link href="#gallery" className="text-sm hover:text-emerald-600">
+          <Link href="/portfolio" className="text-sm hover:text-emerald-600">
             Gallery
           </Link>
         </nav>
@@ -101,25 +101,25 @@ function RenovationOptions() {
       title: "Bathroom",
       duration: "4 WEEKS TO BUILD",
       description: "Build your dream bathroom with premium fixtures and finishes.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=2940&auto=format&fit=crop",
     },
     {
       title: "Kitchen",
       duration: "6 WEEKS TO BUILD",
       description: "Create your ideal kitchen with quality, lasting materials.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop",
     },
     {
       title: "Backyard",
       duration: "9 WEEKS TO BUILD",
       description: "Create your backyard getaway with durable materials and beautiful finishes.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2940&auto=format&fit=crop",
     },
     {
       title: "Basement",
       duration: "7 WEEKS TO BUILD",
       description: "Transform your basement into a functional and beautiful space.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2940&auto=format&fit=crop",
     },
   ]
 
@@ -174,7 +174,7 @@ function ProcessSection() {
       step: "03",
       title: "Expert Execution",
       description: "Watch as our skilled team brings your dream space to life.",
-      image: "https://images.unsplash.com/photo-1581477518633-85063371b89a?q=80&w=2940&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop"
     }
   ]
 
@@ -334,7 +334,7 @@ function Footer() {
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      <Navigation />
       <main>
         <HeroSection />
         <RenovationOptions />

@@ -12,17 +12,17 @@ export default function StylePage() {
     {
       name: "Two-Tone Traditional",
       description: "White and gray cabinets. Bronze hardware. Charming octagon dot flooring.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop",
     },
     {
       name: "Blue Contemporary",
       description: "Navy, black, and white palette. Trendy 4x4 subway tile.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop",
     },
     {
       name: "Warm Traditional",
       description: "Traditional cabinet door style. Bronze hardware. 2x8 tile backsplash.",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop",
     },
   ]
 

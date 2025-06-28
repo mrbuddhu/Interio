@@ -3,11 +3,12 @@
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
@@ -16,31 +17,43 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-sm">
-      <nav className="container flex h-20 items-center justify-between">
-        <Link href="/" className="font-serif text-2xl font-semibold text-primary">
-          Interio
+    <header className="fixed inset-x-0 top-0 z-[100] bg-white/80 backdrop-blur-sm pointer-events-auto">
+      <nav className="container flex h-14 items-center justify-between">
+        {/* Logo only, no text */}
+        <Link href="/" className="flex items-center">
+          <Image src="/interio.png" alt="Interio Logo" width={40} height={40} className="rounded" />
         </Link>
-
         {/* Desktop navigation */}
-        <div className="hidden items-center gap-8 md:flex">
-          <div className="flex gap-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          <Link href="/estimate" className="btn btn-primary">
-            Get Estimate
+        <div className="hidden md:flex items-center gap-8">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-base font-medium text-neutral-700 hover:text-emerald-600 transition-colors"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <Link
+            href="/auth/signin"
+            className="text-base font-medium text-neutral-700 hover:bg-emerald-50 hover:text-emerald-600 rounded px-3 py-2 transition-colors"
+          >
+            Log in
+          </Link>
+          <Link
+            href="/auth/signup"
+            className="ml-2 px-4 py-2 rounded border border-emerald-500 text-emerald-500 font-semibold hover:bg-emerald-50 transition-colors"
+          >
+            Sign up
+          </Link>
+          <Link
+            href="/estimate"
+            className="ml-2 px-4 py-2 rounded bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition-colors"
+          >
+            Get your estimate
           </Link>
         </div>
-
-        {/* Mobile navigation */}
+        {/* Mobile navigation toggle */}
         <button
           type="button"
           className="rounded-lg p-2.5 text-neutral-700 md:hidden"
@@ -50,7 +63,6 @@ export function Navigation() {
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
-
       {/* Mobile navigation menu */}
       {isOpen && (
         <div className="container md:hidden">
@@ -59,19 +71,33 @@ export function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-3 text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900"
+                className="block px-4 py-3 text-base font-medium text-neutral-700 hover:text-emerald-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="px-4 py-4">
+            <div className="px-4 py-4 flex flex-col gap-2">
+              <Link
+                href="/auth/signin"
+                className="btn btn-ghost w-full"
+                onClick={() => setIsOpen(false)}
+              >
+                Log in
+              </Link>
+              <Link
+                href="/auth/signup"
+                className="btn btn-outline w-full"
+                onClick={() => setIsOpen(false)}
+              >
+                Sign up
+              </Link>
               <Link
                 href="/estimate"
                 className="btn btn-primary w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Get Estimate
+                Get your estimate
               </Link>
             </div>
           </div>

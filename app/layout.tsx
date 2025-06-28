@@ -16,6 +16,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Interio - Transform Your Living Space",
   description: "Professional home renovation and interior design services",
+  icons: {
+    icon: "/interio.png"
+  }
 }
 
 export default function RootLayout({

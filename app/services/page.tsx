@@ -7,7 +7,7 @@ export default function ServicesPage() {
     {
       title: "Kitchen Renovation",
       description: "Transform your kitchen into a modern, functional space with custom cabinetry, premium countertops, and state-of-the-art appliances.",
-      image: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=2940&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop",
       features: ["Custom Cabinetry", "Premium Countertops", "Modern Appliances", "Lighting Design"]
     },
     {
