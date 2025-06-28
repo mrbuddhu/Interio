@@ -42,8 +42,22 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t text-center text-neutral-600">
-          <p>&copy; {new Date().getFullYear()} Interio. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-neutral-600">&copy; {new Date().getFullYear()} Interio. All rights reserved.</p>
+            <div className="flex items-center gap-2 text-neutral-600">
+              <span>Built by</span>
+              <Link 
+                href="https://www.sanganak.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-semibold text-primary hover:text-primary-dark transition-colors"
+              >
+                Sanganak
+              </Link>
+              <span>- #1 Premium IT Boutique</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
