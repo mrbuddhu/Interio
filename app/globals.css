@@ -112,7 +112,7 @@
   }
 
   .card {
-    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+    @apply rounded-lg border bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-sm;
   }
 
   .card-header {
@@ -124,7 +124,7 @@
   }
 
   .card-description {
-    @apply text-sm text-muted-foreground;
+    @apply text-sm text-[hsl(var(--muted-foreground))];
   }
 
   .card-content {
