@@ -35,18 +35,6 @@ export function Navigation() {
             </Link>
           ))}
           <Link
-            href="/auth/signin"
-            className="text-base font-medium text-neutral-700 hover:bg-emerald-50 hover:text-emerald-600 rounded px-3 py-2 transition-colors"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/auth/signup"
-            className="ml-2 px-4 py-2 rounded border border-emerald-500 text-emerald-500 font-semibold hover:bg-emerald-50 transition-colors"
-          >
-            Sign up
-          </Link>
-          <Link
             href="/estimate"
             className="ml-2 px-4 py-2 rounded bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition-colors"
           >
@@ -78,20 +66,6 @@ export function Navigation() {
               </Link>
             ))}
             <div className="px-4 py-4 flex flex-col gap-2">
-              <Link
-                href="/auth/signin"
-                className="btn btn-ghost w-full"
-                onClick={() => setIsOpen(false)}
-              >
-                Log in
-              </Link>
-              <Link
-                href="/auth/signup"
-                className="btn btn-outline w-full"
-                onClick={() => setIsOpen(false)}
-              >
-                Sign up
-              </Link>
               <Link
                 href="/estimate"
                 className="btn btn-primary w-full"
