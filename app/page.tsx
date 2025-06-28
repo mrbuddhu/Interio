@@ -203,7 +203,7 @@ function RenovationOptions() {
         ease: "easeOut"
       }
     }
-  }
+  } as const
 
   return (
     <section className="py-16 bg-gray-50">
