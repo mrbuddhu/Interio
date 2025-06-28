@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function ServicesPage() {
   const services = [
@@ -132,6 +133,7 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   )
 }

@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function PortfolioPage() {
   const categories = ["All", "Kitchen", "Bathroom", "Living Room", "Bedroom", "Office", "Outdoor"]
@@ -168,6 +169,7 @@ export default function PortfolioPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   )
 }

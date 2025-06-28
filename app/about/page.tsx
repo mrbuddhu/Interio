@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function AboutPage() {
   const team = [
@@ -182,6 +183,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-[url(/pattern.svg)] opacity-50" />
         </section>
       </main>
+      <Footer />
     </>
   )
 }

@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { Star, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { contactInfo } from "@/lib/contact-info"
 
 // Site Header Component
 function SiteHeader() {
@@ -292,26 +293,28 @@ function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Rooms</h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">Bathrooms</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">Kitchens</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">Backyards</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">Basements</Link></li>
+              <li><Link href="/services/bathroom-remodeling" className="text-muted-foreground hover:text-foreground">Bathrooms</Link></li>
+              <li><Link href="/services/kitchen-renovation" className="text-muted-foreground hover:text-foreground">Kitchens</Link></li>
+              <li><Link href="/services/outdoor-living" className="text-muted-foreground hover:text-foreground">Backyards</Link></li>
+              <li><Link href="/services" className="text-muted-foreground hover:text-foreground">All Services</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">How it works</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">Gallery</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">FAQ</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground">Guides</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-foreground">About Us</Link></li>
+              <li><Link href="/portfolio" className="text-muted-foreground hover:text-foreground">Gallery</Link></li>
+              <li><Link href="/services" className="text-muted-foreground hover:text-foreground">Services</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li><span className="text-muted-foreground">1 800 234 5432</span></li>
-              <li><span className="text-muted-foreground">hello@interio.com</span></li>
+              <li><span className="text-muted-foreground">{contactInfo.phone}</span></li>
+              <li><span className="text-muted-foreground">{contactInfo.email}</span></li>
+              <li><span className="text-muted-foreground">{contactInfo.address.street}</span></li>
+              <li><span className="text-muted-foreground">{contactInfo.address.city}</span></li>
             </ul>
           </div>
           <div>
