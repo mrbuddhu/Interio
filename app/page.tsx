@@ -58,7 +58,7 @@ function HeroSection() {
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/projects" className="border-white/20 bg-white/10 text-white hover:bg-white/20">
+              <Link href="/portfolio" className="border-white/20 bg-white/10 text-white hover:bg-white/20">
                 View Our Projects
               </Link>
             </Button>
