@@ -6,45 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { contactInfo } from "@/lib/contact-info"
 
-// Site Header Component
-function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background animate-slide-down">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="animate-fade-in-scale">
-          <Link href="/" className="text-xl font-semibold">
-            Interio
-          </Link>
-        </div>
-        <nav className="hidden md:flex items-center gap-6">
-          {[
-            { href: "/about", label: "How it works" },
-            { href: "/services", label: "Services" },
-            { href: "/services", label: "Contractors" },
-            { href: "/portfolio", label: "Gallery" }
-          ].map((item, index) => (
-            <div
-              key={item.href}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
-            >
-              <Link href={item.href} className="text-sm hover:text-emerald-600 transition-colors">
-                {item.label}
-              </Link>
-            </div>
-          ))}
-        </nav>
-        <div className="flex items-center gap-4 animate-slide-in-right">
-          <Button variant="ghost">Log in</Button>
-          <Button className="bg-emerald-600 hover:bg-emerald-700">
-            Get your estimate
-          </Button>
-        </div>
-      </div>
-    </header>
-  )
-}
-
 // Hero Section Component
 function HeroSection() {
   return (
@@ -384,7 +345,7 @@ function Footer() {
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <Navigation />
       <HeroSection />
       <RenovationOptions />
       <ProcessSection />
