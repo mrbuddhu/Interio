@@ -34,11 +34,10 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-4 text-neutral-900">Hours</h3>
+            <h3 className="font-semibold mb-4 text-neutral-900">Legal</h3>
             <ul className="space-y-2">
-              <li className="text-neutral-600">{contactInfo.hours.weekdays}</li>
-              <li className="text-neutral-600">{contactInfo.hours.saturday}</li>
-              <li className="text-neutral-600">{contactInfo.hours.sunday}</li>
+              <li><Link href="/legal/terms" className="text-neutral-600 hover:text-neutral-900">Terms of Use</Link></li>
+              <li><Link href="/legal/privacy" className="text-neutral-600 hover:text-neutral-900">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>

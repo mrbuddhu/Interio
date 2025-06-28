@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    // Disable build trace collection to prevent stack overflow
-    buildTrace: false,
-  },
   // Disable build optimization that might cause stack overflow
   swcMinify: false,
   images: {
@@ -16,6 +12,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['images.unsplash.com'],
   },
 }
 
