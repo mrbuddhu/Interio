@@ -5,6 +5,8 @@ const nextConfig = {
     // Disable build trace collection to prevent stack overflow
     buildTrace: false,
   },
+  // Disable build optimization that might cause stack overflow
+  swcMinify: false,
   images: {
     remotePatterns: [
       {
